@@ -1,0 +1,82 @@
+﻿<Window x:Class="WMS___ENL_Distribution_AS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMS___ENL_Distribution_AS"
+        xmlns:viewModel="clr-namespace:WMS___ENL_Distribution_AS.Viewmodel"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Height="600" Width="1073"
+        ResizeMode="CanMinimize"
+        Title="Warehouse Management System - ENL Distribution">
+
+    <Window.DataContext>
+        <viewModel:MenuViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="289*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="ENL Distribution A/S"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="19"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton Content="Lager"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding LagerViewCommand}"/>
+
+                <RadioButton Content="Ordrer"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding OrdrerViewCommand}"/>
+
+                <RadioButton Content="Medarbejder"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding MedarbejderViewCommand}"/>
+
+
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10,4,10"
+                            Content="{Binding CurrentView}"/>
+
+
+        </Grid>
+
+
+
+    </Border>
+</Window>

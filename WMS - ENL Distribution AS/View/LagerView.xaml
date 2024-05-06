@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="WMS___ENL_Distribution_AS.View.LagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WMS___ENL_Distribution_AS.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <WrapPanel Height="70" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Name="LblProdukt" Content="Products:" HorizontalAlignment="Left" Margin="20,10" Padding="10" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+            <Button Name="BtnProdukt" Content="Update Products" HorizontalAlignment="Left" Margin="20" Padding="5" VerticalAlignment="Top" Click="BtnProdukt_Click"/>
+            <Button Name="BtnAddProdukt" Content="Add Product" HorizontalAlignment="Left" Margin="20" Padding="5" VerticalAlignment="Top" Click="BtnAddProdukt_Click"/>
+            <TextBox x:Name="TbSearchBox" Width="100" Margin="20" Padding="5" PreviewMouseDown="TextBox_PreviewMouseDown" LostFocus="TbSearchBox_LostFocus" ></TextBox>
+            <Button x:Name="BtnSearch" Content="Search" Margin="20" Padding="5" Click="BtnSearch_Click"></Button>
+        </WrapPanel>
+        
+        <DataGrid Name="DgProdukt" Margin="0,70,0,0" IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+       
+    </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="WMS___ENL_Distribution_AS.EditProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMS___ENL_Distribution_AS"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Edit Product" Height="380" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Edit Product" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Grid.Column="0" Grid.ColumnSpan="2" Width="150"></Label>
+
+        <Label x:Name="LblProdId" HorizontalContentAlignment="Right" Content="Product ID:" HorizontalAlignment="Stretch" Margin="0,42,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxProdId" Background="#FFE6E3E3" Text="{Binding Product.productId, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1" IsReadOnly="True"></TextBox>
+        <Label x:Name="LblName" HorizontalContentAlignment="Right" Content="Name:" HorizontalAlignment="Stretch" Margin="0,78,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxName" Text="{Binding Product.productName, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+        <Label x:Name="LblDescription" HorizontalContentAlignment="Right" Content="Description:" HorizontalAlignment="Stretch" Margin="0,114,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxDescription" Text="{Binding Product.productDescription, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" Grid.Column="1"></TextBox>
+        <Label x:Name="LblPrice" HorizontalContentAlignment="Right" Content="Price:" HorizontalAlignment="Stretch" Margin="0,150,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxPrice" Text="{Binding Product.productPrice, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+        <Label x:Name="LblAmount" HorizontalContentAlignment="Right" Content="Amount:" HorizontalAlignment="Stretch" Margin="0,191,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxAmount" Text="{Binding Product.productAmount, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+        <Label x:Name="LblPlacementId" HorizontalContentAlignment="Right" Content="Placement ID:" HorizontalAlignment="Stretch" Margin="0,225,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxPlacementId" Text="{Binding Product.productPlacementId, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+
+        <Button x:Name="BtnPrev" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Content="Prev" Width="55" Height="25" Margin="10,0,0,0" Click="BtnPrev_Click"></Button>
+        <Button x:Name="BtnNext" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Content="Next" Width="55" Height="25" Margin="70,0,0,0" Click="BtnNext_Click"></Button>
+
+
+        <Button x:Name="BtnSaveProduct" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Content="Save" Width="75" Height="25" Margin="0,0,95,0" Click="BtnSaveProduct_Click"></Button>
+        <Button x:Name="BtnCancel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Content="Cancel" Width="75" Height="25" Margin="0,0,10,0" Click="BtnCancel_Click"></Button>
+        <Button x:Name="BtnDeleteProduct" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Delete" Width="75" Height="25" Margin="0,9,10,164" Click="BtnDeleteProduct_Click"/>
+    </Grid>
+</Window>

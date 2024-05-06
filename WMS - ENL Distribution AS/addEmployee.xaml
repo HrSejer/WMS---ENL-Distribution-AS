@@ -1,0 +1,52 @@
+﻿<Window x:Class="WMS___ENL_Distribution_AS.addEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMS___ENL_Distribution_AS"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="addEmployee" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="LblFirstName" HorizontalContentAlignment="Right" Content="Firstname:" HorizontalAlignment="Stretch" Margin="0,42,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxFirstName" Text="" HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+        
+        <Label x:Name="LblLastName" HorizontalContentAlignment="Right" Content="Lastname:" HorizontalAlignment="Stretch" Margin="0,78,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxLastName" Text="" HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="25" Grid.Column="1"></TextBox>
+        
+        <Label x:Name="LblEmail" HorizontalContentAlignment="Right" Content="Mail:" HorizontalAlignment="Stretch" Margin="0,114,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxEmail" Text="" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="25" Grid.Column="1"></TextBox>
+        
+        <Label x:Name="LblPhone" HorizontalContentAlignment="Right" Content="Phone:" HorizontalAlignment="Stretch" Margin="0,150,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxPhone" Text="" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1"></TextBox>
+
+        <Label x:Name="LblCompletedOrders" HorizontalContentAlignment="Right" Content="Completed Orders:" HorizontalAlignment="Stretch" Margin="0,220,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <TextBox x:Name="TbxCompletedOrders" Text="0" HorizontalAlignment="Left" Margin="10,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1" IsReadOnly="True" Background="#FFE6E3E3"></TextBox>
+
+        <Label x:Name="LblEmploymentStatus" HorizontalContentAlignment="Right" Content="Employment Status:" HorizontalAlignment="Stretch" Margin="0,252,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <ComboBox x:Name="CbxEmploymentStatus" Text="" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1">
+            <ComboBoxItem Content="Active"/>
+            <ComboBoxItem Content="Terminated"/>
+            <ComboBoxItem Content="Unavailable"/>
+        </ComboBox>
+
+        <Label x:Name="LblJobTitle" HorizontalContentAlignment="Right" Content="Job Title:" HorizontalAlignment="Stretch" Margin="0,187,0,0" VerticalAlignment="Top" Height="25"></Label>
+        <ComboBox x:Name="CbxJobTitle" Text="" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="100" Height="25" Grid.Column="1">
+            <ComboBoxItem Content="Warehouse Manager"/>
+            <ComboBoxItem Content="Teamleader"/>
+            <ComboBoxItem Content="Warehouse Employee"/>
+        </ComboBox>
+
+        <Button x:Name="BtnAddEmp" Content="Add" Grid.Row="1" Grid.Column="1" Margin="0,20,95,0" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnAddEmp_Click" ></Button>         
+    </Grid>
+</Window>
