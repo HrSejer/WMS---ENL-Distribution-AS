@@ -1,0 +1,28 @@
+CREATE TABLE Employees (
+employeeId INT IDENTITY(1,1),
+firstname VARCHAR(32),
+lastName VARCHAR(32),
+jobTitle VARCHAR(32),
+mail VARCHAR(32),
+createdDate DATETIME,
+employmentStatus VARCHAR(32),
+phoneNum VARCHAR(12),
+completedOrders INT
+)
+
+CREATE TABLE Orders (
+orderId INT IDENTITY (1,1),
+productName VARCHAR(32),
+employeeName  VARCHAR(32),
+orderAmount INT,
+orderStatus VARCHAR(32)
+)
+
+CREATE TABLE Products (
+productId INT IDENTITY (1,1),
+productAmount INT,
+productPlacementId VARCHAR(16), 
+productName VARCHAR(32),
+productDescription VARCHAR(32),
+productPrice DECIMAL
+)
